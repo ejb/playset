@@ -1,7 +1,22 @@
 import { t, makeSprite } from '@replay/core';
 
+const requiredProps = [
+  'fileName',
+  'columns',
+  'rows',
+  'fps'
+];
+
 export const AnimatedSprite = makeSprite({
   init({ props }) {
+    
+    const missingProps = requiredProps.filter(prop => {
+      return (props.hasOwnProperty(prop) === false);
+    });
+    if (missingProps.length > 0) {
+      throw(`AnimatedSprite is missing required prop(s): ${missingProps.join(', ')}`)
+    }
+    
     const defaultFrame = props.frameArray ? props.frameArray[0] : 0
     return {
       frame: defaultFrame,
