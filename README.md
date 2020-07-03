@@ -1,68 +1,32 @@
-# Replay Starter (JavaScript)
+# Playset
 
-Welcome to your game!
+Handy utilities for the Replay game engine.
 
-## Structure
+## AnimatedSprite
 
-- `assets`: Assets like audio and images go here. Nested folders are not currently supported.
-- `src`: Where your game code and tests go.
-- `swift`: Code specific to deploying to iOS goes here, such as your Xcode project.
-- `web`: Code specific to deploying to web goes here. You can edit the web load screen too.
-- `.eslintignore` / `.eslintrc.js`: Configure your linting rules.
-- `.gitignore`: List of files to ignore in git.
-- `babel.config.js`: Config for Babel compiler.
-- `jest.config.js`: Config file for Jest tests.
-- `package.json` / `package-lock.json`: Manage dependencies of your project.
+Extends Replay's built-in [spriteSheet](https://replay.js.org/docs/textures/#sprite-sheet) to allow for GIF-like looping animation.
 
-## Setup
-
-```bash
-npm install
+```js
+const blueFlame = AnimatedSprite({
+  id: 'person',
+  x: 0,
+  y: 0,
+  fileName: 'blue-flame.png',
+  columns: 3,
+  rows: 1,
+  fps: 10
+});
 ```
 
-## Development
+Additional properties:
 
-```bash
-npm start
-```
+* `fps`: Frames Per Second _(required)_
+* `frameArray`: To use only a subset of the spritesheet, use a zero-indexed array of positions (e.g. `[3, 4, 5, 4]`). If the spritesheet is large, there is an alternative syntax `[{x: 0, y: 4}, {x: 1, y: 4}, {x: 2, y: 4}]`
+* `playing`: Set to `false` to pause animation
 
-Runs your game locally in the browser using [webpack-dev-server](https://github.com/webpack/webpack-dev-server). Will auto-refresh on changes.
+For other properties, see [spriteSheet](https://replay.js.org/docs/textures/#sprite-sheet) documentation.
 
-> Note: if you add or rename audio and image assets, you need to restart the dev server.
 
-## Lint files
+## Credits
 
-```bash
-npm run lint
-```
-
-Lints your code using [ESLint](https://eslint.org/) with [Prettier](https://prettier.io/) for formatting. Edit [.eslintrc.js](./.eslintrc.js) to change lint rules.
-
-## Test
-
-```bash
-npm run test
-
-# or watch for file changes
-npm run test:watch
-```
-
-Runs tests using Jest. Will look out for files of name `*.test.js` in a `__tests__` directory.
-
-## Build for web
-
-```bash
-npm run build-web
-```
-
-Creates an HTML, JS and assets bundle in `web/dist`. You can then deploy this somewhere to share with the world!
-
-## Run on iOS
-
-```bash
-npm run build-swift
-open swift/replay-starter-ts.xcodeproj/
-# run in Xcode
-```
-
-Assets like audio and images need to be dragged into your Xcode project.
+Sprites used in examples are by [Lanea Zimmerman](https://opengameart.org/content/tiny-16-basic).
