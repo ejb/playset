@@ -7,14 +7,14 @@ const requiredProps = [
   'fps'
 ];
 
-export const AnimatedSprite = makeSprite({
+export const Animation = makeSprite({
   init({ props }) {
     
     const missingProps = requiredProps.filter(prop => {
       return (props.hasOwnProperty(prop) === false);
     });
     if (missingProps.length > 0) {
-      throw(`AnimatedSprite is missing required prop(s): ${missingProps.join(', ')}`)
+      throw(`Animation is missing required prop(s): ${missingProps.join(', ')}`)
     }
     
     const defaultFrame = props.frameArray ? props.frameArray[0] : 0

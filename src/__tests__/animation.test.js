@@ -1,15 +1,15 @@
 import { testSprite } from '@replay/test';
 import { mapInputCoordinates } from '@replay/web';
-import { AnimatedSprite } from '../animated-sprite';
+import { Animation } from '../animation';
 import { gameProps } from '..';
 
-test('AnimatedSprite required props', () => {
+test('Animation required props', () => {
   expect(() => {
-    testSprite(AnimatedSprite({}), gameProps);
+    testSprite(Animation({}), gameProps);
   }).toThrow('missing required prop(s)');
 });
 
-test('AnimatedSprite basic init', () => {
+test('Animation basic init', () => {
   
   const flameProps = ({
     id: 'person',
@@ -21,7 +21,7 @@ test('AnimatedSprite basic init', () => {
     fps: 10
   });
   
-  const flame = testSprite(AnimatedSprite(flameProps), gameProps);
+  const flame = testSprite(Animation(flameProps), gameProps);
   
   const textures = flame.getTextures();
   

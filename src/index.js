@@ -1,5 +1,5 @@
 import { makeSprite, t } from '@replay/core';
-import { AnimatedSprite } from './animated-sprite';
+import { Animation } from './animation';
 
 export const gameProps = {
   id: 'Game',
@@ -67,7 +67,7 @@ export const Game = makeSprite({
     
 
     // minimum of options
-    const blameFlame = AnimatedSprite({
+    const blameFlame = Animation({
       id: 'blue-flame',
       x: -100,
       y: 0,
@@ -78,7 +78,7 @@ export const Game = makeSprite({
     });
 
     // using the x/y `frameArray` syntax in a larger spritesheet
-    const orangeFlame = AnimatedSprite({
+    const orangeFlame = Animation({
       id: 'orange-flame',
       x: 100,
       y: 0,
@@ -99,7 +99,7 @@ export const Game = makeSprite({
     // example of dynamically changing `frameArray`
     // and `playing` to swap between animations
     const { player } = state;
-    const playerSprite = AnimatedSprite({
+    const playerSprite = Animation({
       id: 'player',
       x: player.x,
       y: player.y,

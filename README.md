@@ -2,12 +2,12 @@
 
 Handy utilities for the Replay game engine.
 
-## AnimatedSprite
+## Animation
 
 Extends Replay's built-in [spriteSheet](https://replay.js.org/docs/textures/#sprite-sheet) to allow for GIF-like looping animation.
 
 ```js
-const blueFlame = AnimatedSprite({
+const blueFlame = Animation({
   id: 'person',
   x: 0,
   y: 0,
