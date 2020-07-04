@@ -2,12 +2,21 @@
 
 Handy utilities for the Replay game engine.
 
+## Importing
+
+```js
+import * as playset from 'playset';
+
+// or if you just want individual components
+import { Animation, Pattern } from 'playset';
+```
+
 ## Animation
 
 Extends Replay's built-in [spriteSheet](https://replay.js.org/docs/textures/#sprite-sheet) to allow for GIF-like looping animation.
 
 ```js
-const blueFlame = Animation({
+const blueFlame = playset.Animation({
   id: 'person',
   x: 0,
   y: 0,
@@ -31,7 +40,7 @@ For other properties, see [spriteSheet](https://replay.js.org/docs/textures/#spr
 Use a single image as a repeating pattern.
 
 ```js
-const path = Pattern({
+const path = playset.Pattern({
   id: 'path',
   x: 0,
   y: 0,
@@ -41,6 +50,21 @@ const path = Pattern({
   tileHeight: 50,
   fileName: 'path.png'
 });
+```
+
+## Development
+
+Clone repo, then:
+
+```
+npm install
+npm start
+```
+
+To run unit tests:
+
+```
+npm test
 ```
 
 ## Credits

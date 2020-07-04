@@ -1,6 +1,6 @@
 import { makeSprite, t } from '@replay/core';
-import { Animation } from './animation';
-import { Pattern } from './pattern';
+
+import * as playset from './playset';
 
 export const gameProps = {
   id: 'Game',
@@ -68,7 +68,7 @@ export const Game = makeSprite({
     
 
     // minimum of options
-    const blameFlame = Animation({
+    const blameFlame = playset.Animation({
       id: 'blue-flame',
       x: -100,
       y: 0,
@@ -79,7 +79,7 @@ export const Game = makeSprite({
     });
 
     // using the x/y `frameArray` syntax in a larger spritesheet
-    const orangeFlame = Animation({
+    const orangeFlame = playset.Animation({
       id: 'orange-flame',
       x: 100,
       y: 0,
@@ -100,7 +100,7 @@ export const Game = makeSprite({
     // example of dynamically changing `frameArray`
     // and `playing` to swap between animations
     const { player } = state;
-    const playerSprite = Animation({
+    const playerSprite = playset.Animation({
       id: 'player',
       x: player.x,
       y: player.y,
@@ -113,7 +113,7 @@ export const Game = makeSprite({
     });
     
     // basic pattern    
-    const path = Pattern({
+    const path = playset.Pattern({
       id: 'background-path',
       x: 0,
       y: 0,
@@ -125,7 +125,7 @@ export const Game = makeSprite({
     });
 
     // full-screen pattern
-    const grass = Pattern({
+    const grass = playset.Pattern({
       id: 'background-grass',
       x: 0,
       y: 0,
