@@ -26,6 +26,22 @@ Additional properties:
 
 For other properties, see [spriteSheet](https://replay.js.org/docs/textures/#sprite-sheet) documentation.
 
+## Pattern
+
+Use a single image as a repeating pattern.
+
+```js
+const path = Pattern({
+  id: 'path',
+  x: 0,
+  y: 0,
+  width: 150,
+  height: 150,
+  tileWidth: 50,
+  tileHeight: 50,
+  fileName: 'path.png'
+});
+```
 
 ## Credits
 

@@ -112,31 +112,27 @@ export const Game = makeSprite({
       playing: player.walking
     });
     
-    console.log(device)
-    
+    // basic pattern    
     const path = Pattern({
       id: 'background-path',
       x: 0,
       y: 0,
-      offsetX: 0,
-      offsetY: 0,
-      width: 50,
-      height: 50,
-      scale: 1,
-      fileName: 'path.png',
-      columns: 3,
-      rows: 10
+      width: 150,
+      height: 150,
+      tileWidth: 50,
+      tileHeight: 50,
+      fileName: 'path.png'
     });
 
+    // full-screen pattern
     const grass = Pattern({
       id: 'background-grass',
       x: 0,
       y: 0,
-      offsetX: 0,
-      offsetY: 0,
-      width: 50,
-      height: 50,
-      scale: 1,
+      width: device.size.deviceWidth,
+      height: device.size.deviceHeight,
+      tileWidth: 50,
+      tileHeight: 50,
       fileName: 'grass.png'
     });
     
