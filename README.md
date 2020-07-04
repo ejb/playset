@@ -1,6 +1,9 @@
 # Playset
 
-Handy utilities for the Replay game engine.
+Handy utilities for the [Replay game engine](https://replay.js.org/).
+
+* [Live demo of components](http://elliotbentley.com/playset/web/dist/)
+* [Demo source code](./src/index.js)
 
 ## Importing
 
