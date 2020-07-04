@@ -1,5 +1,6 @@
 import { makeSprite, t } from '@replay/core';
 import { Animation } from './animation';
+import { Pattern } from './pattern';
 
 export const gameProps = {
   id: 'Game',
@@ -63,7 +64,7 @@ export const Game = makeSprite({
     };
   },
 
-  render({ state }) {
+  render({ state, device }) {
     
 
     // minimum of options
@@ -109,9 +110,39 @@ export const Game = makeSprite({
       fps: 8,
       frameArray: frameArrays[player.direction],
       playing: player.walking
-    });  
+    });
+    
+    console.log(device)
+    
+    const path = Pattern({
+      id: 'background-path',
+      x: 0,
+      y: 0,
+      offsetX: 0,
+      offsetY: 0,
+      width: 50,
+      height: 50,
+      scale: 1,
+      fileName: 'path.png',
+      columns: 3,
+      rows: 10
+    });
+
+    const grass = Pattern({
+      id: 'background-grass',
+      x: 0,
+      y: 0,
+      offsetX: 0,
+      offsetY: 0,
+      width: 50,
+      height: 50,
+      scale: 1,
+      fileName: 'grass.png'
+    });
     
     return [
+      grass,
+      path,
       playerSprite,
       orangeFlame,
       blameFlame
