@@ -1,9 +1,8 @@
 {
-  "name": "replay-starter-js",
-  "private": true,
-  "version": "0.2.0",
-  "description": "A starter template for building a Replay game (JavaScript)",
-  "main": "src/index.js",
+  "name": "playset",
+  "version": "0.0.1",
+  "description": "Handy utilities for the Replay game engine",
+  "main": "src/playset.js",
   "scripts": {
     "start": "webpack-dev-server --config ./web/webpack.config.js --open --mode=development",
     "lint": "eslint .",
