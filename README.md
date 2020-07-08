@@ -55,6 +55,49 @@ const path = playset.Pattern({
 });
 ```
 
+## Button
+
+A box with text on it that does something when clicked/tapped on. The font and color can be customised using the optional `font`, `color`, and `colorPressed` properties.
+
+```js
+const button = playset.Button({
+  id: 'button',
+  x: 0,
+  y: 0,
+  width: 100,
+  height: 30,
+  text: 'Click me',
+  onPress: () => {
+    // do something here when pressed
+  },
+  font: { name: 'Papyrus', size: 15 },
+  color: 'white',
+  colorPressed: 'gray'
+});
+```
+
+## Clickable
+
+Similar to a button, except it comes without any default appearance. Pass an array of sprites into the `sprites` property to define how it looks.
+
+```js
+const interactiveSquare = playset.Clickable({
+  id: 'clickable',
+  width: 24,
+  height: 24,
+  onPress: () => {
+    // do something here when pressed
+  },
+  sprites: isPressed => [
+    t.rectangle({
+      width: 20,
+      height: 20,
+      color: isPressed ? 'red' : 'yellow'
+    })
+  ]
+});
+```
+
 ## Development
 
 Clone repo, then:

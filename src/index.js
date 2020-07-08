@@ -136,12 +136,26 @@ export const Game = makeSprite({
       fileName: 'grass.png'
     });
     
+    const button = playset.Button({
+      id: 'button',
+      x: -200,
+      y: 150,
+      width: 100,
+      height: 30,
+      font: { name: 'Papyrus', size: 15 },
+      text: 'Click me',
+      color: 'white',
+      colorPressed: 'gray',
+      onPress: () => alert('button pressed')
+    });
+    
     return [
       grass,
       path,
       playerSprite,
       orangeFlame,
-      blameFlame
+      blameFlame,
+      button
     ];
   },
 });
