@@ -18,7 +18,9 @@ test('Animation basic init', () => {
     fileName: 'blue-flame.png',
     columns: 3,
     rows: 1,
-    fps: 10
+    fps: 10,
+    width: 10,
+    height: 10
   });
   
   const flame = testSprite(Animation(flameProps), gameProps);
@@ -29,3 +31,29 @@ test('Animation basic init', () => {
   expect(textures[0].type).toBe('spriteSheet');
   
 });
+
+test('Animation size', () => {
+  
+  const flameProps = ({
+    id: 'person',
+    x: 0,
+    y: 0,
+    fileName: 'blue-flame.png',
+    columns: 3,
+    rows: 1,
+    fps: 10,
+    width: 999,
+    height: 545
+  });
+  
+  const flame = testSprite(Animation(flameProps), gameProps);
+  
+  const textures = flame.getTextures();
+  
+  expect(textures.length).toBe(1);
+  
+  expect(textures[0].props.width).toBe(999);
+  expect(textures[0].props.height).toBe(545);
+  
+});
+

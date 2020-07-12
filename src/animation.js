@@ -4,7 +4,9 @@ const requiredProps = [
   'fileName',
   'columns',
   'rows',
-  'fps'
+  'fps',
+  'width',
+  'height'
 ];
 
 export const Animation = makeSprite({
@@ -44,6 +46,9 @@ export const Animation = makeSprite({
     if (props.playing !== false) {
       let frameIndex = Math.round(state.tick / ticksPerFrame);
       if (frameIndex >= totalFrames) {
+        if (props.loop === false) {
+          frameIndex = totalFrames - 1;
+        }
         frameIndex = frameIndex % totalFrames;
       }
       frame = frameArray[frameIndex];
@@ -62,9 +67,10 @@ export const Animation = makeSprite({
       fileName,
       columns,
       rows,
+      scale: props.scale,
       index: state.frame,
-      width: 50,
-      height: 50
+      width: props.width,
+      height: props.height
     });
     
     return [
@@ -72,4 +78,3 @@ export const Animation = makeSprite({
     ];
   },
 });
-
