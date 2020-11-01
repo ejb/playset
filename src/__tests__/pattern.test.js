@@ -20,7 +20,7 @@ test('Pattern basic init', () => {
   
   const textures = path.getTextures();
   
-  expect(textures.length).toBe(9);
+  expect(textures.length).toBe(36);
   expect(textures[0].type).toBe('image');
   
 });
