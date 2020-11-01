@@ -5,6 +5,14 @@ Handy utilities for the [Replay game engine](https://replay.js.org/).
 * [Live demo of components](http://elliotbentley.com/playset/web/dist/)
 * [Demo source code](./src/index.js)
 
+## Installation
+
+Install using npm:
+
+```sh
+npm install https://github.com/ejb/playset.git -S
+```
+
 ## Importing
 
 ```js

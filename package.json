@@ -1,6 +1,6 @@
 {
   "name": "playset",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Handy utilities for the Replay game engine",
   "main": "src/playset.js",
   "scripts": {
@@ -14,8 +14,8 @@
     "ci": "npm run lint && npm run build && npm run test"
   },
   "dependencies": {
-    "@replay/core": "0.2.0",
-    "@replay/web": "0.2.0",
+    "@replay/core": "0.7.0",
+    "@replay/web": "0.7.0",
     "core-js": "^3.6.5",
     "regenerator-runtime": "^0.13.5"
   },

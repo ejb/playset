@@ -1,6 +1,6 @@
-import { t, makeSprite } from "@replay/core";
+import { t, mask, makeSprite } from "@replay/core";
 
-export const Pattern = makeSprite({
+const PatternInner = makeSprite({
   render({ props, device }) {
 
     const {
@@ -11,12 +11,12 @@ export const Pattern = makeSprite({
       tileHeight
     } = props;
     
-    const rows = width / tileWidth;
-    const columns = height / tileHeight;
+    const rows = (width / tileWidth) + 2;
+    const columns = (height / tileHeight) + 2;
     
     const positions = [];
-    for (var x = 0; x < rows; x++) {
-      for (var y = 0; y < columns; y++) {
+    for (var x = -1; x < rows; x++) {
+      for (var y = -1; y < columns; y++) {
         positions.push([
           x - Math.floor(rows * 0.5),
           y - Math.floor(columns * 0.5)
@@ -36,5 +36,29 @@ export const Pattern = makeSprite({
     });
     
     return imgs;
+  }
+});
+
+export const Pattern = makeSprite({
+  render({ props, device }) {
+    
+    const {
+      width,
+      height,
+    } = props;
+    
+    const pattern = PatternInner({
+      ...props,
+      mask: mask.rectangle({
+        width,
+        height,
+        x: 0,
+        y: 0,
+      }),
+    });
+    
+    return [
+      pattern
+    ]; 
   }
 });

@@ -1,3 +1,18 @@
+// defined in webpack
+/* global ASSET_NAMES */
+
+export const options = {
+  loadingTextures: [
+    t.text({
+      color: "black",
+      text: "Loading...",
+    }),
+  ],
+  assets: ASSET_NAMES,
+  dimensions: "scale-up",
+};
+
+
 import { makeSprite, t } from '@replay/core';
 
 import * as playset from './playset';
@@ -75,7 +90,9 @@ export const Game = makeSprite({
       fileName: 'blue-flame.png',
       columns: 3,
       rows: 1,
-      fps: 10
+      fps: 10,
+      width: 50,
+      height: 50,
     });
 
     // using the x/y `frameArray` syntax in a larger spritesheet
@@ -87,6 +104,8 @@ export const Game = makeSprite({
       columns: 12,
       rows: 8,
       fps: 10,
+      width: 50,
+      height: 50,
       frameArray: [{x: 0, y: 4}, {x: 1, y: 4}, {x: 2, y: 4}],
     });
     
@@ -108,6 +127,8 @@ export const Game = makeSprite({
       columns: 12,
       rows: 8,
       fps: 8,
+      width: 50,
+      height: 50,
       frameArray: frameArrays[player.direction],
       playing: player.walking
     });
@@ -138,7 +159,7 @@ export const Game = makeSprite({
     
     const button = playset.Button({
       id: 'button',
-      x: -200,
+      x: -100,
       y: 150,
       width: 100,
       height: 30,
