@@ -1,6 +1,6 @@
 {
   "name": "playset",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Handy utilities for the Replay game engine",
   "main": "src/playset.js",
   "scripts": {

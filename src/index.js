@@ -170,13 +170,40 @@ export const Game = makeSprite({
       onPress: () => alert('button pressed')
     });
     
+    const transitionTest = playset.Transition({
+      id: 'transition-test',
+      x:  150,
+      y: -150,
+      origin: {
+        scaleX: 0.8,
+        rotation: -5,
+      },
+      target: {
+        scaleX: 1.4,
+        rotation: 5,
+      },
+      duration: 2000,
+      playback: 'bounce',
+      sprites: [
+        t.rectangle({
+          width: 120,
+          height: 15,
+        }),
+        t.text({
+          text: 'Transition example',
+          color: 'black',
+        }),
+      ]
+    });
+    
     return [
       grass,
       path,
       playerSprite,
       orangeFlame,
       blameFlame,
-      button
+      button,
+      transitionTest,
     ];
   },
 });

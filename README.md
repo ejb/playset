@@ -109,6 +109,40 @@ const interactiveSquare = playset.Clickable({
 });
 ```
 
+## Transition
+
+A wrapper sprite for easy transitions (transform, scale, rotate).
+
+- `origin`: properties for initial state. Available: `x`, `y`, `scaleX`, `scaleY`, `rotation`
+- `target`: properties for final state
+- `duration`: length of animation in miliseconds
+- `playback` (optional): direction of movement `once` (default), `reverse`, `repeat` or `bounce`
+- `sprites`: array of sprites that will be transformed
+
+```js
+const rectangle = playset.Transition({
+  id: 'expanding-rectangle',
+  x: 0,
+  y: 0,
+  origin: {
+    scaleX: 1,
+    scaleY: 1,
+  },
+  target: {
+    scaleX: 1.5,
+    scaleY: 1.5,
+  },
+  duration: 1000,
+  playback: 'once',
+  sprites: [
+    t.rectangle({
+      width: 120,
+      height: 15,
+    }),
+  ]
+});
+```
+
 ## Development
 
 Clone repo, then:
